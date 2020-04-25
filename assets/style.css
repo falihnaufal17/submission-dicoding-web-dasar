@@ -1,27 +1,266 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
-nav{
-    display: flex;
-    background-color: #65a1e9;
+body {
+    font-family: 'Nunito Sans', sans-serif;
 }
-
-nav a{
-    text-decoration: none;
+nav {
+    background: #65a1e9;
+    padding: 5px 20px;
 }
-
-nav a h1{
-    font-family: 'Pacifico', cursive;
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
-    font-weight: 400;
-}
-
-nav ul{
+ul {
     list-style-type: none;
-    display: flex;
 }
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.logo a:hover {
+    text-decoration: none;
+}
+.menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+}
+
+.menu li .myname{
+    font-family: 'pacifico', cursive;
+    font-weight: 500;
+    letter-spacing: 0.1rem
+}
+
+.logo a,
+.toggle a {
+    font-size: 20px;
+}
+.button.secondary {
+    border-bottom: 1px #444 solid;
+}
+
+/* Mobile menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle {
+    order: 1;
+}
+.item.button {
+    order: 2;
+}
+.item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+}
+.item.active {
+    display: block;
+}
+
+/* Tablet menu */
+@media screen and (min-width: 600px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+    }
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        order: 2;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button a {
+        padding: 7.5px 15px;
+        background: teal;
+        border: 1px #006d6d solid;
+    }
+    .button.secondary a {
+        background: transparent;    
+    }
+    .button a:hover {
+        text-decoration: none;
+    }
+    .button:not(.secondary) a:hover {
+        background: #006d6d;
+        border-color: #005959;
+    }
+    .button.secondary a:hover {
+        color: #ddd;
+    } 
+}
+
+/* Desktop menu */
+@media screen and (min-width: 900px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 15px 10px;
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
+}
+
+main {
+    padding: 20px;
+    overflow: auto;
+ }
+
+article.card{
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin-bottom: 20px;
+}
+
+p.content{
+    text-align: justify;
+    line-height: 1.5;
+    font-weight: 500;
+    text-indent: 1.6em;
+    margin-bottom: 22px;
+}
+
+p.content:last-child{
+    margin-bottom: 0;
+}
+
+.avatar{
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+#content {
+    float: left;
+    width: 75%;
+ }
+
+ aside {
+    float: right;
+    width: 25%;
+    padding-left: 20px;
+ }
+
+ .profile{
+     text-align: center;
+ }
+
+ .identity{
+    text-align:left;
+ }
+
+ .identity table{
+     font-size: 14px;
+ }
+
+ .identity h2{
+     text-align: center;
+ }
+
+ footer {
+    padding: 20px;
+    color: white;
+    background-color: #65a1e9;
+    text-align: center;
+    font-weight: 700;
+ }
+
+ .row{
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+ .col-3{
+    flex: 0 0 25%;
+    max-width: 25%;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+ }
+
+ .list-image{
+    position: relative;
+    margin-bottom: 20px;
+ }
+
+ .list-image > .row{
+    margin: 0 -5px;
+ }
+
+ .list-image > .row > *{
+    padding: 0 5px;
+ }
+
+ .list-image .item-img{
+    border-color: transparent !important;
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+    padding: unset;
+    width: 100%;
+    height: 100%;
+ }
+
+ .list-image .item-img img{
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+ }
+
+ @media screen and (max-width: 1000px) {
+    #content,
+    aside {
+        width: 100%;
+        padding: 0;
+    }
+ }
+
+ #more {display: none;}
+ #myBtn {color: blue}
